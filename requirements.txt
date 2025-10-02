@@ -5,6 +5,6 @@ gunicorn
 
 git init
 git add .
-git commit -m "Initial commit"
-git remote add origin https://github.com/MHHandsAtl/gpt-access-app.git
+git commit -m "MHHandsAtl"
+git remote add origin https://github.com/MHHandsAtl/gpt-access-appT2.git
 git push -u origin master
