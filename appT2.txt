@@ -1,0 +1,28 @@
+from flask import Flask, render_template, request, redirect, session
+from werkzeug.security import check_password_hash
+
+app = Flask(__name__)
+app.secret_key = 'c7f3bcff17107ed49597f2c0da7cc0c8177bf6824135fd24ba2018f31f29e2b9'  # Replace with your generated key
+
+# Replace with your generated password hash
+PASSWORD_HASH = 'scrypt:32768:8:1$TV08KdRAe1uXxyne$6c7af32ee0262c4ae4580e05d9b7ecdb...'
+
+@app.route('/', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        password = request.form['password']
+        if check_password_hash(PASSWORD_HASH, password):
+            session['authenticated'] = True
+            return redirect('/chat')
+    return render_template('login.html')
+
+@app.route('/chat')
+def chat():
+    if not session.get('authenticated'):
+        return redirect('/')
+    return render_template('chat.html')
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    return redirect('/')

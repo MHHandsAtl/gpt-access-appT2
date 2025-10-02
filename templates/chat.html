@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to Mothers Helping Hands GPT</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f5f0;
+      color: #333;
+      text-align: center;
+      padding: 50px;
+    }
+
+    .logo {
+      max-height: 100px;
+      margin-bottom: 20px;
+    }
+
+    .launch-button {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #8c3b6c;
+      color: white;
+      font-size: 18px;
+      text-decoration: none;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+
+    .launch-button:hover {
+      background-color: #a94f85;
+    }
+
+    .logout {
+      display: block;
+      margin-top: 40px;
+      color: #8c3b6c;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <img src="{{ url_for('static', filename='LOGO.png') }}" alt="Mothers Helping Hands Logo" class="logo">
+  <h1>Welcome to Mothers Helping Hands GPT</h1>
+  <p>Empowering maternal wellness through trusted guidance</p>
+
+  <a href="https://chatgpt.com/g/g-68d94d09ec1c8191a4791996c02a53be-doula-business-growth-gpt-t2" target="_blank" class="launch-button">Launch GPT</a>
+
+  <a href="/logout" class="logout">Logout</a>
+</body>
+</html>
